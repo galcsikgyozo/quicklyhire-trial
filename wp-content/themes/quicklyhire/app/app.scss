@@ -95,6 +95,10 @@ html {
 }
 
 body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
 	font-family: 'Poppins', sans-serif;
 	font-weight: var(--font-weight-regular);
 	font-size: var(--font-size-normal);
@@ -119,10 +123,13 @@ body {
 
 /* Header */
 .header {
-	position: absolute;
-	top: 0;
-	left: 0;
 	width: 100%;
+
+	body.page-template-default & {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 
 	body.admin-bar & {
 		top: 32px;
@@ -361,6 +368,13 @@ h3, .h3 { font-size: var(--font-size-h3); }
 
 }
 
+/* Font sizes */
+.font-size {
+	&-small { font-size: var(--font-size-small); }
+	&-normal { font-size: var(--font-size-normal); }
+	&-medium { font-size: var(--font-size-medium); }
+}
+
 /* Colors */
 .color {
 	&-transparent { color: transparent !important; }
@@ -419,10 +433,13 @@ h3, .h3 { font-size: var(--font-size-h3); }
  */
 
 main {
+	flex-grow: 1;
+
+	section {
+		padding: var(--section-vertical-padding) 0;
+	}
+
 	&.template-home {
-		section {
-			padding: var(--section-vertical-padding) 0;
-		}
 
 		> :first-child {
 			padding-top: var(--header-bar-height);

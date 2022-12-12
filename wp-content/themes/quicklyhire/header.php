@@ -8,4 +8,24 @@
 	<?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>
-	
+
+	<header class="header">
+		<div class="header__container container">
+			<div class="header__logo-wrapper">
+				<a href="<?php site_url();?>">LOGO</a>
+			</div>
+			<div class="header__navigation">
+				<ul>
+					<li>
+						<a href="#">Pulvinar</a>
+					</li>
+					<li>
+						<a href="#">Fusce</a>
+					</li>
+					<li>
+						<a href="#">Lectus</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</header>

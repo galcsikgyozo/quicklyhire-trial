@@ -29,3 +29,10 @@ body {
   background-color: var(--color-white);
   min-height: 100vh;
 }
+
+/**
+ * Home Templare
+ */
+.home__hero {
+  background-color: var(--color-green);
+}

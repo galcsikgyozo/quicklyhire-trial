@@ -45,3 +45,104 @@ function qh_load_scripts(){
 	wp_enqueue_script('bootstrap');
 }
 add_action('wp_enqueue_scripts', 'qh_load_scripts');
+
+/**
+ * Theme Customizers API
+ */
+
+function qh_customize_register( $wp_customize ){
+	$wp_customize->remove_section('custom_css');
+}
+add_action('customize_register', 'qh_customize_register');
+
+class theme_customizer {
+	public function __construct(){
+		add_action('customize_register', array($this, 'register_customize_section'));
+	}
+	
+	public function register_customize_section($wp_customize){
+		// Initialize datas
+		$this->header_section($wp_customize);
+		$this->footer_section($wp_customize);
+	}
+	 
+	// Footer section settings
+	private function header_section($wp_customize){
+		 
+		// New header section
+		$wp_customize->add_section('header-section', array(
+			'title' => 'Header',
+			'description' => __('Here you can modify the settings regarding the header.'),
+			// "priority" => 20, // before menus
+		));
+		
+		// Add header logo
+		$wp_customize->add_setting('header-logo-setting', array(
+			'default' => ''
+		));
+
+		$wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'header-logo-control', array(
+			'label'      => __( 'Header logo', 'theme_name' ),
+			'section'    => 'header-section',
+			'settings'   => 'header-logo-setting'
+		)));
+		
+		// Add button label
+		$wp_customize->add_setting('button-label-setting', array(
+			'default' => ''
+		));
+		
+		$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'button-label-control', array(
+			'label' => 'Button label',
+			'section' => 'header-section',
+			'settings' => 'button-label-setting',
+			'type' => '<input>'
+		)));
+		
+		// Add button URL
+		$wp_customize->add_setting('button-url-setting', array(
+			'default' => ''
+		));
+		
+		$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'button-url-control', array(
+			'label' => 'Button URL',
+			'section' => 'header-section',
+			'settings' => 'button-url-setting',
+			'type' => '<input>'
+		)));
+	}
+	 
+	// Footer section settings
+	private function footer_section($wp_customize){
+
+		// New footer section
+		$wp_customize->add_section('footer-section', array(
+			'title' => 'Footer',
+			'description' => __('Here you can modify the settings regarding the footer.'),
+		));
+		
+		// Add footer logo
+		$wp_customize->add_setting('footer-logo-setting', array(
+			'default' => ''
+		));
+
+		$wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'footer-logo-control', array(
+			'label'      => __( 'Footer logo', 'theme_name' ),
+			'section'    => 'footer-section',
+			'settings'   => 'footer-logo-setting'
+		)));
+		
+		// Add copyright input
+		$wp_customize->add_setting('copyright-setting', array(
+			'default' => ''
+		));
+		
+		$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'copyright-control', array(
+			'label' => 'Copyright label',
+			'section' => 'footer-section',
+			'settings' => 'copyright-setting',
+			'type' => '<input>'
+		)));
+	}
+}
+new theme_customizer();

@@ -12,21 +12,22 @@
 	<header class="header">
 		<div class="header__container container">
 			<div class="header__logo-wrapper">
-				<a href="<?php site_url();?>">LOGO</a>
+				<?php if(!empty(get_theme_mod('header-logo-setting'))){ ?>
+				<a href="<?php site_url();?>">
+					<img src="<?php echo get_theme_mod('header-logo-setting'); ?>" alt="<?php echo get_bloginfo('name'); ?> website header logo" />
+				</a>
+				<?php } ?>
 			</div>
-			<div class="header__navigation">
-				<ul>
-					<li>
-						<a href="#">Pulvinar</a>
-					</li>
-					<li>
-						<a href="#">Fusce</a>
-					</li>
-					<li>
-						<a href="#">Lectus</a>
-					</li>
-				</ul>
-			</div>
-			<a href="#" class="button outlined color-dark-gray border-color-dark-gray hover-color-white hover-bg-color-dark-gray">Button</a>
+			<?php
+			$header_menu = wp_nav_menu(
+				array(
+					'theme_location' => 'header-navigation',
+					'container_class' => 'header__navigation'
+				)
+			);
+			?>
+			<?php if(!empty(get_theme_mod('button-label-setting')) && !empty(get_theme_mod('button-url-setting'))){ ?>
+			<a href="<?=get_theme_mod('button-url-setting');?>" class="button outlined color-dark-gray border-color-dark-gray hover-color-white hover-bg-color-dark-gray"><?=get_theme_mod('button-label-setting');?></a>
+			<?php } ?>
 		</div>
 	</header>

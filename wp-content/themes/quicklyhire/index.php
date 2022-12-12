@@ -1,41 +1,59 @@
 <?php get_header(); ?>
 
 	<main class="template-home">
-
+		<?php $hero = get_field('home__hero'); ?>
+		<?php if($hero['enabled'] == true){ ?>
 		<section class="home__hero">
 			<div class="home__hero__container container">
 				<div class="home__hero__row row">
 					<div class="col-lg-6 pb-5">
-						<h1>Lorem ipsum</h1>
+						<?php if(!empty($hero['title'])){ ?><h1><?=$hero['title'];?></h1><?php } ?>
+						<?php if(!empty($hero['content'])){ ?>
 						<div class="mb-45">
-							<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+							<?php echo $hero['content']; ?>
 						</div>
-						<a href="#" class="button">Button</a>
+						<?php } ?>
+						<?php if(!empty($hero['cta']['url'])){ ?>
+						<a href="<?=$hero['cta']['url'];?>" <?php if(!empty($hero['cta']['target'])){ echo 'target="'.$hero['cta']['targer'].'"'; } ?> class="button bg-color-purple hover-bg-color-dark-gray color-white hover-color-white border-color-purple hover-border-color-dark-gray"><?=$hero['cta']['title']; ?></a>
+						<?php } ?>
 					</div>
+					<?php if(!empty($hero['image'])){ ?>
 					<div class="col-lg-6">
-					<img src="https://picsum.photos/574/588" alt="" class="w-100">
+						<img src="<?=$hero['image']['sizes']['medium'];?>" alt="<?=$hero['image']['alt'];?>" class="w-100" />
 					</div>
+					<?php } ?>
 				</div>
 			</div>
 		</section>
+		<?php } ?>
 
+		<?php $text = get_field('home__text'); ?>
+		<?php if($text['enabled'] == true){ ?>
 		<section class="home__text">
 			<div class="home__text__container container text-lg-center">
-				<h2 class="h3">Fusce ut placerat orci nulla pellentesque dignissim enim</h2>
+				<?php if(!empty($text['title'])){ ?><h2 class="h3"><?=$text['title'];?></h1><?php } ?>
 			</div>
 		</section>
+		<?php } ?>
 
+		<?php $content = get_field('home__content'); ?>
+		<?php if($content['enabled'] == true){ ?>
 		<section class="home__content">
 			<div class="home__content__container container">
+				<?php if(!empty($content['title']) && !empty($content['content'])){ ?>
 				<div class="home__content__text-wrapper">
-					<h3>Adipiscing elit duis tristique sollicitudin nibh sit.</h3>
-					<p>Molestie nunc non blandit massa enim. Orci sagittis eu volutpat odio facilisis mauris sit amet. Lectus arcu bibendum at varius vel pharetra vel turpis nunc.</p>
+					<?php if(!empty($content['title'])){ ?><h3><?=$content['title'];?></h3><?php } ?>
+					<?php if(!empty($content['content'])){ echo $content['content']; } ?>
 				</div>
+				<?php } ?>
+				<?php if(!empty($content['image'])){ ?>
 				<div class="home__content__image-wrapper">
-					<img src="https://picsum.photos/596/396" alt="" class="">
+					<img src="<?=$content['image']['sizes']['medium'];?>" alt="<?=$content['image']['alt'];?>" />
 				</div>
+				<?php } ?>
 			</div>
 		</section>
+		<?php } ?>
 
 	</main>
 

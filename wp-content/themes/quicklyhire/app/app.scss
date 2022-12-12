@@ -83,7 +83,7 @@ img, picture, svg, video {
 		/* Spacing */
 		--default-inline-margin: 20px;
 		--section-vertical-padding: 50px;
-		--footer-vertical-padding: 30px;
+		--footer-vertical-padding: 40px;
 
 		/* Header */
 		--header-bar-height: 90px;
@@ -499,6 +499,15 @@ main {
 			}
 		}
 
+		&:not(:has(.home__content__image-wrapper)){
+			.home__content__text-wrapper {
+				margin: 0 !important;
+				width: 100% !important;
+				border: 2px solid var(--color-purple) !important;
+				border-radius: var(--default-border-radius) !important;
+			}
+		}
+
 		&__image-wrapper {
 			width: 53%;
 			flex-grow: 0;
@@ -527,6 +536,18 @@ main {
 
 					border-top-left-radius: 0;
 					border-top-right-radius: 0;
+				}
+			}
+		}
+
+		&:not(:has(.home__content__text-wrapper)){
+			.home__content__image-wrapper {
+				width: 100% !important;
+				margin: 0 !important;
+
+				> img {
+					border: 0 !important;
+					border-radius: var(--default-border-radius) !important;
 				}
 			}
 		}

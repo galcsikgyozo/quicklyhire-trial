@@ -2,7 +2,7 @@
 		<div class="footer__container container">
 			<?php if(!empty(get_theme_mod('footer-logo-setting'))){ ?>
 			<div class="footer__logo-wrapper">
-				<a href="<?php site_url();?>">
+				<a href="<?php echo site_url();?>">
 					<img src="<?php echo get_theme_mod('footer-logo-setting'); ?>" alt="<?php echo get_bloginfo('name'); ?> website footer logo" />
 				</a>
 			</div>

@@ -27,5 +27,6 @@
 					</li>
 				</ul>
 			</div>
+			<a href="#" class="button outlined color-dark-gray border-color-dark-gray hover-color-white hover-bg-color-dark-gray">Button</a>
 		</div>
 	</header>

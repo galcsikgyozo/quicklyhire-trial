@@ -5,7 +5,7 @@
 					LOGO
 				</a>
 			</div>
-			<div class="footer__copyright-and-navigation">
+			<div class="footer__policies-wrapper">
 				<div class="footer__copyright">
 					&copy; Copyright 2022. All Rights Reserved.
 				</div>

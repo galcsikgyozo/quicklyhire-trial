@@ -14,7 +14,7 @@
 			<div class="header__logo-wrapper">
 				<?php if(!empty(get_theme_mod('header-logo-setting'))){ ?>
 				<a href="<?php echo site_url();?>">
-					<img src="<?php echo get_theme_mod('header-logo-setting'); ?>" alt="<?php echo get_bloginfo('name'); ?> website header logo" />
+					<img src="<?php echo get_theme_mod('header-logo-setting'); ?>" alt="<?php echo get_bloginfo('name'); ?> website header logo" loading="lazy" />
 				</a>
 				<?php } ?>
 			</div>

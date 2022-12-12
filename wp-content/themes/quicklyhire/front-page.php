@@ -6,7 +6,7 @@
 		<section class="home__hero">
 			<div class="home__hero__container container">
 				<div class="home__hero__row row">
-					<div class="col-lg-6 pb-5">
+					<div class="col-lg-6 mb-45">
 						<?php if(!empty($hero['title'])){ ?><h1><?=$hero['title'];?></h1><?php } ?>
 						<?php if(!empty($hero['content'])){ ?>
 						<div class="mb-45">
@@ -19,7 +19,7 @@
 					</div>
 					<?php if(!empty($hero['image'])){ ?>
 					<div class="col-lg-6">
-						<img src="<?=$hero['image']['sizes']['medium'];?>" alt="<?=$hero['image']['alt'];?>" class="w-100" />
+						<img src="<?=$hero['image']['sizes']['medium'];?>" alt="<?=$hero['image']['alt'];?>" class="w-100" loading="lazy" />
 					</div>
 					<?php } ?>
 				</div>
@@ -48,7 +48,7 @@
 				<?php } ?>
 				<?php if(!empty($content['image'])){ ?>
 				<div class="home__content__image-wrapper">
-					<img src="<?=$content['image']['sizes']['medium'];?>" alt="<?=$content['image']['alt'];?>" />
+					<img src="<?=$content['image']['sizes']['medium'];?>" alt="<?=$content['image']['alt'];?>" loading="lazy" />
 				</div>
 				<?php } ?>
 			</div>

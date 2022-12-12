@@ -35,8 +35,9 @@ function qh_load_stylesheets(){
 	global $quicklyhire_theme;
 	/*!* -- BOOTSTRAP 5.2.3 -- *!*/
 	// wp_register_style('bootstrap', get_template_directory_uri() . '/app/bootstrap@5.2.3/css/bootstrap.min.css', array(), esc_html('5.2.0-beta1'), 'all');
-	wp_register_style('bootstrap', '/app/bootstrap@5.2.3/css/bootstrap.min.css', array(), esc_html('5.2.0-beta1'), 'all');
-	wp_enqueue_style('bootstrap');
+	wp_register_style('bootstrap-grid', '/app/bootstrap@5.2.3/css/bootstrap-grid.min.css', array(), esc_html('5.2.0-beta1'), 'all');
+	// wp_register_style('bootstrap', '/app/bootstrap@5.2.3/css/bootstrap.min.css', array(), esc_html('5.2.0-beta1'), 'all');
+	wp_enqueue_style('bootstrap-grid');
 
 	/*!* -- WEB APP STYLING -- *!*/
 	// wp_register_style('app', get_template_directory_uri() . '/app/app.css', array(), esc_html($quicklyhire_theme->get('Version')), 'all');

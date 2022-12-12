@@ -39,6 +39,7 @@ Thumbs.db
 # track these files, if they exist
 !.gitignore
 !.htaccess
+!wp-config.php
 
 # track favicon files, if they exist
 !android-chrome-*.png

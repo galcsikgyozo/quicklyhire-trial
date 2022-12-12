@@ -97,9 +97,8 @@ define('WP_POST_REVISIONS', false); 				// Disallow post revisions in database
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
 if ( ! defined( 'WP_DEBUG' ) ) {
-	// define( 'WP_DEBUG', false );
-	define('WP_DEBUG', true);
-	error_reporting(E_ALL);
+	define( 'WP_DEBUG', false );
+	error_reporting(0);
 }
 
 /* That's all, stop editing! Happy publishing. */

@@ -9,6 +9,10 @@ add_theme_support('title-tag');
 // Post thumbnail support
 add_theme_support('post-thumbnails');
 
+// Editor styles support
+add_theme_support('editor-styles');
+add_editor_style();
+
 /**
  * Nav Menus
  */

@@ -34,7 +34,7 @@ function qh_load_stylesheets(){
 	wp_enqueue_style('bootstrap');
 
 	/*!* ********** APPLICATION STYLING ********** *!*/
-	wp_register_style('app', get_template_directory_uri() . '/app/app.min.css', array(), esc_html($ggwp_theme->get('Version')), 'all');
+	wp_register_style('app', get_template_directory_uri() . '/app/app.min.css', array(), esc_html($quicklyhire_theme->get('Version')), 'all');
 	wp_enqueue_style('app');
 }
 add_action('wp_enqueue_scripts', 'qh_load_stylesheets');

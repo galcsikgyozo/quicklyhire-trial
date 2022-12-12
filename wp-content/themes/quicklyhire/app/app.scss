@@ -9,11 +9,24 @@
 	box-sizing: border-box;
 }
 
-body {
-	min-height: 100vh;
-}
-
 img, picture, svg, video {
 	display: block;
 	max-width: 100%;
+}
+
+/**
+ * Custom Theme Styling
+ */
+
+:root {
+	--color-green: #D3E589;
+	--color-purple: #BF56FF;
+	--color-dark-gray: #212121;
+	--color-white: #FFFFFF;
+}
+
+body {
+	color: var(--color-dark-gray);
+	background-color: var(--color-white);
+	min-height: 100vh;
 }

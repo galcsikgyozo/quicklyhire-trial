@@ -80,6 +80,8 @@ $table_prefix = 'wp_';
 
 /* Add any custom values between this line and the "stop editing" line. */
 
+define('CORE_UPGRADE_SKIP_NEW_BUNDLED', true); 		// Disallow downloading core themes each year
+define('WP_POST_REVISIONS', false); 				// Disallow post revisions in database
 
 
 /**

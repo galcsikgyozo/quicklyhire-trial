@@ -146,3 +146,17 @@ class theme_customizer {
 	}
 }
 new theme_customizer();
+
+/**
+ * Advanced Custom Fields
+ */
+
+// Hide custom fields from admin menu
+add_action('admin_menu', function(){
+	remove_menu_page('edit.php?post_type=acf-field-group');
+});
+
+// Include field group files (all .php files in the 'acf' folder)
+foreach(glob(get_template_directory() . "/acf/*.php") as $filename){
+	include $filename;
+}

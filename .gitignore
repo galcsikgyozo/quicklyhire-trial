@@ -53,5 +53,7 @@ Thumbs.db
 !site.webmanifest
 
 # track these mu-plugins, plugins, and themes
+!wp-content/mu-plugins/*
 !wp-content/plugins/advanced-custom-fields/
+!wp-content/plugins/classic-editor/
 !wp-content/themes/quicklyhire/

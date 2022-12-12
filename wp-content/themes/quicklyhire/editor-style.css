@@ -1,4 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@font-face {
+    font-family: 'Poppins';
+    src: url('app/app/fonts/Poppins-Regular.woff2') format('woff2'),
+         url('app/fonts/Poppins-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('app/fonts/Poppins-SemiBold.woff2') format('woff2'),
+         url('app/fonts/Poppins-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('app/fonts/Poppins-Medium.woff2') format('woff2'),
+         url('app/fonts/Poppins-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
 
 :root {
 	--color-green: #D3E589;
